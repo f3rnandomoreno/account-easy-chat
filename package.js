@@ -13,11 +13,11 @@ Package.describe({
 Package.onUse(function(api) {
   api.use(['standard-app-packages'], ['client','server']);
   api.versionsFrom('1.0.3.1');
-  api.addFiles('server/server.js');
-  api.addFiles('server/collections.js');
-  api.addFiles('server/publications.js');
-  api.addFiles('lib/config.js');
-  api.use('accounts-base', ['server']);
+  api.addFiles(['server/server.js',
+                'server/collections.js',
+                'server/publications.js',
+                'lib/config.js'],'server');
+  api.use('accounts-base', 'server');
   api.export('AccountSimpleChat')
 });
 
