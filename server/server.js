@@ -12,7 +12,6 @@ Meteor.methods({
 // When user is logged on app we set nickname
 Accounts.onLogin(function(options){
     if (AccountSimpleChat.config.setNickName===SET_AUTO_NICK_NAME[0]) {
-        console.log("SET_AUTO_NICK_NAME[0]:true")
         if (options.user.username) {
             AccountSimpleChat.setNickName(options.user.username)
         }else{
