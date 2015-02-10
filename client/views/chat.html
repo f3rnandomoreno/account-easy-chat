@@ -1,0 +1,12 @@
+<template name="accountEasyChat">
+    <div style="width: 100%;height: 100%">
+        {{> screenOut}}
+        {{> write}}
+    </div>
+</template>
+<template name="screenOut">
+    {{messages}}
+</template>
+<template name="write">
+    <input type="text" id="text_message"/><button id="send_message">Enviar</button>
+</template>

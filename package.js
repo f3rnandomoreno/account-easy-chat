@@ -11,18 +11,20 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  api.use(['templating','handlebars'], 'client');
   api.use(['standard-app-packages'], ['client','server']);
-  api.versionsFrom('1.0.3.1');
+  api.addFiles(['client/views/chat.js',
+                'client/views/chat.html'],'client')
   api.addFiles(['server/server.js',
-                'server/collections.js',
-                'server/publications.js',
-                'lib/config.js'],'server');
+              'server/publications.js'],'server');
+  api.addFiles(['shared/collections.js',
+                'lib/config.js'],['client','server'])
   api.use('accounts-base', 'server');
-  api.export('AccountSimpleChat')
+  api.export('AccountEasyChat')
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('kahon:chat');
-  api.addFiles('chat-tests.js');
+  api.use('kahon:account-easy-chat');
+  api.addFiles('tests.js');
 });
