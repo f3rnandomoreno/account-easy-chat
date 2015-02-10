@@ -11,7 +11,8 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.use(['templating','handlebars'], 'client');
+  api.use(['templating'], 'client');
+  api.imply(['templating'], 'client');
   api.use(['standard-app-packages'], ['client','server']);
   api.addFiles(['client/views/chat.js',
                 'client/views/chat.html'],'client')
