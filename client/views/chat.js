@@ -1,7 +1,7 @@
 Meteor.subscribe('accountEasyChatMessages')
 
 messages=""
-UI.registerHelper('messages',function(){
+Template.registerHelper('messages',function(){
     Messages.find({}).forEach(function(m){
         var message =  wrapSpanColor(m.nick,"#2E2EFE")+br()+wrapSpanColor(m.message,"#000000")+br()
         messages = messages + message
@@ -17,8 +17,8 @@ function br(){
 }
 
 
-//Template.write.events({
-//  'click': function(event, template) {
+//Template.writeText.events({
+//  'click #send_message': function(event, template) {
 //     console.log($("#text_message"))
 //      //Meteor.call('sendMessage')
 //  }
