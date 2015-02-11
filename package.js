@@ -14,6 +14,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
   api.use(['standard-app-packages'], ['client','server']);
   api.use('accounts-base', 'server');
+  
+  // Allows the user of this package to choose their own Bootstrap
+  // implementation.
+  api.use(['twbs:bootstrap@3.3.1', 'nemo64:bootstrap@3.3.1_1'], 'client', {weak: true});
   api.addFiles(['client/client.html','client/client.js'],'client');
   api.addFiles(['lib/config.js',
                 'shared/collections.js'],['server','client'])

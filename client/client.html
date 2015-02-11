@@ -1,12 +1,19 @@
 <template name="accountEasyChat">
-    <div style="width: 100%;height: 100%">
-        {{> screenOut}}
+    <div class="container">
         {{> writeText}}
+        <div class="container" style="height: 100%">{{> screenOut}}</div>
     </div>
 </template>
 <template name="screenOut">
     {{messages}}
 </template>
 <template name="writeText">
-    <input type="text" id="text_message"/><button id="send_message">Enviar</button>
+    <div class="input-group" style="margin-bottom: 20px">
+        <input type="text" class="form-control" placeholder="Escribir aquí" id="text_message" maxlength={{MAX_LENGHT}}/>
+        <span class="input-group-btn">
+           <button class="btn btn-default" type="button" id="send_message">
+              Enviar
+           </button>
+        </span>
+     </div>
 </template>
