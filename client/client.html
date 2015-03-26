@@ -8,6 +8,7 @@
     {{messages}}
 </template>
 <template name="writeText">
+    {{#if currentUser}}
     <div class="input-group" style="margin-bottom: 20px">
         <input type="text" class="form-control" placeholder="Escribir aquí" id="text_message" maxlength={{MAX_LENGHT}}/>
         <span class="input-group-btn">
@@ -16,4 +17,9 @@
            </button>
         </span>
      </div>
+    {{/if}}
+    {{#unless currentUser}}
+    ¡Regístrate para poder escribir!
+    {{/unless}}
+
 </template>
